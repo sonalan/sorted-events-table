@@ -1,12 +1,13 @@
 
 import './App.css';
 
-import Events from './components/Events';
+//import Events from './components/Events';
+import SagaEvents from './components/SagaEvents';
 
 function App() {
   return (
     <div className="app">
-      <Events />
+      <SagaEvents />
     </div>
   );
 }
