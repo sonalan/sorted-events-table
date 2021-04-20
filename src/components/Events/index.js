@@ -65,14 +65,12 @@ function Events() {
 
     function sortDirection(a,b,isAsc){
         if(isAsc){
-                 
             if (a < b) {
                 return -1;
             }
             if (a > b) {
                 return 1;
             }
-            
         }else{
             if (a > b) {
                 return -1;
@@ -127,7 +125,6 @@ function Events() {
             const eventA = venues.find(x=>x.id===Object.values(a)[5]).name;
             const eventB = venues.find(x=>x.id===Object.values(b)[5]).name;
             
-            //console.log(aKey,bKey);
             return sortDirection(eventA,eventB,isAscending);
         })
         setSortedBy('Venue');
@@ -136,9 +133,7 @@ function Events() {
     const sortByDate = () => {
         setIsAscending(!isAscending);
         events.sort((a,b)=>{
-            
             return sortDirection(a.date,b.date,isAscending);
-            
         })
         setSortedBy('Date');
     }
@@ -146,9 +141,7 @@ function Events() {
     const sortById = () => {
         setIsAscending(!isAscending);
         events.sort((a,b)=>{
-            
             return sortDirection(a.id,b.id,isAscending);
-            
         })
         setSortedBy('Id');
     }
@@ -157,16 +150,12 @@ function Events() {
         
         setIsAscending(!isAscending);
         events.sort((a,b)=>{
-            
             return sortDirection(a.price,b.price,isAscending);
-            
         })
         setSortedBy('Price');
     }
     
-    
     const DirectionIcon = ({direction}) => direction?<i className="bi bi-caret-down-fill"></i>:<i className="bi bi-caret-up-fill"></i>
-        
 
     return (
         <div>
@@ -215,7 +204,7 @@ function Events() {
                     return (
                         
                         <tr key={event.id.toString()} >
-                            <td>{event.id} ss</td>
+                            <td>{event.id}</td>
                             <td>{event.title}</td>
                             <td>{artist&& <span>{artist.name}</span>}</td>
                             <td>{artist&& <span>{artist.genre}</span>}</td>
